@@ -3,16 +3,6 @@
 #include "rpg.h"
 
 int main() {
-	/*Character ennemy;
-	initializeCharacter(&ennemy);
-	Character myCharacter;
-	initializeCharacter(&myCharacter);
-	Weapon **array = listWeapon();
-	for (;;) {
-
-		launchAttack(&ennemy, array);
-		receiveAttack(&myCharacter, array);
-	}*/
 
 	RPG* game = initlializeRPG();
 	addWeapon(game, 25, 30);//AK47

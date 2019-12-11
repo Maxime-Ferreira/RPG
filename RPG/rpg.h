@@ -46,16 +46,3 @@ RPG* initlializeRPG();
 void freeRPG(RPG*);
 
 void _attack(Character* ch, Weapon* w, Grenade* g);
-
-/*
-void launchAttack(Character *ennemy, Weapon** array);
-void receiveAttack(Character *myCharacter, Weapon** array);
-void initializeCharacter(Character *c);
-void endGame(Character *myCharacter);
-Weapon* initializeWeapon(int ammo, int damage);
-Weapon** listWeapon();
-Grenade* initializeGrenade(int quantity, int damage);
-Grenade** listGrenade();
-void freeWeapon();
-void freeListWeapon();*/
-
