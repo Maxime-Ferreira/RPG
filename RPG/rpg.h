@@ -45,7 +45,8 @@ void play(RPG*);
 RPG* initlializeRPG();
 void freeRPG(RPG*);
 
-void _attackW(Character* ch, Weapon* w);
+void _attack(Character* ch, Weapon* w, Grenade* g);
+//void _attackG(Character* ch, Grenade* g);
 
 /*
 void launchAttack(Character *ennemy, Weapon** array);

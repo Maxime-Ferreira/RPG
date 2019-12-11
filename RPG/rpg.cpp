@@ -177,14 +177,22 @@ void play(RPG* game) {
 		else activeCharacter = &game->character2;
 
 		//A refaire :
-		int choice;
+		int choiceWeapon;
 		printf("Choisi ton arme\n");
 		printf("1: AK47\n");
 		printf("2: Deagle\n");
 		printf("3: AWP\n");
-		scanf("%d", &choice);
+		scanf("%d", &choiceWeapon);
 
-		_attackW(activeCharacter, &game->weapons->array[choice - 1]);
+		int choiceGrenade;
+		printf("Choisi ta grenade\n");
+		printf("1: HE\n");
+		printf("2: Molo\n");
+		printf("3: Smoke\n");
+		scanf("%d", &choiceGrenade);
+
+		_attack(activeCharacter, &game->weapons->array[choiceWeapon - 1], &game->grenades->array[choiceGrenade - 1]);
+		//_attackG(activeCharacter, &game->grenades->array[choiceGrenade - 1]);
 		
 		system("pause");
 		if (activeCharacter->life <= 0) {
@@ -214,8 +222,16 @@ void freeRPG(RPG * game) {
 	free(game);
 }
 
-void _attackW(Character * ch, Weapon * w) {
+void _attack(Character * ch, Weapon * w, Grenade* g) {
 	ch->life -= w->damage;
 	--w->ammo;
-	printf("Le mec attaque a pris %i dommages, il lui reste %i points de vie\n", w->damage, ch->life);
+	ch->life -= g->damage;
+	--g->quantity;
+	printf("Le mec attaque a pris %i dommages, il lui reste %i points de vie\n", w->damage, ch->life, g->damage);
 }
+
+/*void _attackG(Character* ch, Grenade* g) {
+	ch->life -= g->damage;
+	--g->quantity;
+	printf("Le mec attaque a pris %i dommages, il lui reste %i points de vie\n", g->damage, ch->life);
+}*/
